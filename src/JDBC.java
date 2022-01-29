@@ -5,7 +5,7 @@ public class JDBC {
         String username = "java";
         String password = "fakepassword";
         String qry = "SELECT * FROM java";
-        String url = "localhost";
+        String url = "jdbc:mysql://localhost:3306/home";
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
