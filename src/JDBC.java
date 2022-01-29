@@ -1,9 +1,10 @@
 import java.sql.*;
+import java.util.LinkedList;
 
 public class JDBC {
     public static void main(String[] args) throws SQLException {
         String username = "java";
-        String password = "fakepassword";
+        String password = "y6luKFfixrHeeQi1r838&IN3%2fX";
         String qry = "SELECT * FROM java";
         String url = "jdbc:mysql://localhost:3306/home";
 
@@ -16,11 +17,12 @@ public class JDBC {
         try {
             Connection con = DriverManager.getConnection(url, username, password);
             Statement statement = con.createStatement();
-            ResultSet result = statement.executeQuery(qry);
-            StringBuilder sb = new StringBuilder();
-            while (result.next()) {
-                sb.append(result.getString(1));
+            ResultSet rs = statement.executeQuery(qry);
+            LinkedList<Person> people = new LinkedList<>();
+            while (rs.next()) {
+                people.add(new Person(rs.getInt(1),rs.getString(2),rs.getString(3)));
             }
+            people.forEach(System.out::println);
         } catch (SQLException e) {
             e.printStackTrace();
         }
