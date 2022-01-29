@@ -15,6 +15,8 @@ public class JDBC {
         }
 
         try {
+            //Person p1 = new Person(7, "Jason", "Bourne");
+            //p1.addToDB();
             Connection con = DriverManager.getConnection(url, username, password);
             Statement statement = con.createStatement();
             ResultSet rs = statement.executeQuery(qry);
