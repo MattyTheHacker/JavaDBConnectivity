@@ -1,1 +1,1 @@
-"# JavaDBConnectivity" 
+# JavaDBConnectivity
