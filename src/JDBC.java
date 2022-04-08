@@ -22,7 +22,7 @@ public class JDBC {
             ResultSet rs = statement.executeQuery(qry);
             LinkedList<Person> people = new LinkedList<>();
             while (rs.next()) {
-                people.add(new Person(rs.getInt(1),rs.getString(2),rs.getString(3)));
+                people.add(new Person(rs.getInt(1), rs.getString(2), rs.getString(3)));
             }
             people.forEach(System.out::println);
         } catch (SQLException e) {
